@@ -1,0 +1,16 @@
+{
+  "name": "scrap-metal-db",
+  "packageManager": "yarn@3.2.1",
+  "scripts": {
+    "migrate": "fauna-schema-migrate run",
+    "generate": "fauna-schema-migrate generate",
+    "apply": "node scripts/apply.mjs",
+    "rollback": "node scripts/rollback.mjs"
+  },
+  "devDependencies": {
+    "@fauna-labs/fauna-schema-migrate": "^2.2.1",
+    "dotenv": "^16.0.1",
+    "faunadb": "^4.6.0",
+    "prettier": "^2.7.1"
+  }
+}

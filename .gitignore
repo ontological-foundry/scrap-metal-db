@@ -1,0 +1,13 @@
+﻿.idea
+node_modules
+fauna/temp
+
+# Yarn Related
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.env

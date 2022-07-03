@@ -1,0 +1,21 @@
+CreateRole({
+  "name": "player",
+  "membership": [{
+    "resource": Collection("users")
+  }],
+  "privileges": [{
+    "resource": Collection("users"),
+    "actions": {
+      "read": Query(Lambda("ref", Equals(CurrentIdentity(), Var("ref"))))
+    }
+  }, {
+    "resource": Collection("user-maps"),
+    "actions": {
+      "read": Query(Lambda("ref", Let([{
+        "doc": Get(Var("ref"))
+      }], Or(Select(["data", "published"], Var("doc"), false), Equals(Select(["data", "creator"], Var("doc"), false), CurrentIdentity()))))),
+      "create": Query(Lambda("newDoc", Equals(Select(["data", "creator"], Var("newDoc")), CurrentIdentity()))),
+      "write": Query(Lambda(["oldData", "newData"], And(Equals(Select(["data", "creator"], Var("oldData")), CurrentIdentity()), Not(ContainsPath(["creator"], Var("newData"))), Not(ContainsPath(["created"], Var("oldData"))))))
+    }
+  }]
+})

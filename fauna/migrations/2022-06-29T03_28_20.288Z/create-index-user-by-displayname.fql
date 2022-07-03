@@ -1,0 +1,8 @@
+CreateIndex({
+  "name": "user-by-displayname",
+  "source": Collection("users"),
+  "terms": [{
+    "field": ["data", "displayname"]
+  }],
+  "unique": true
+})
