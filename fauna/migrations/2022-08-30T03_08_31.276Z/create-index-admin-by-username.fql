@@ -1,0 +1,8 @@
+CreateIndex({
+  "name": "admin-by-username",
+  "source": Collection("admins"),
+  "terms": [{
+    "field": ["data", "username"]
+  }],
+  "unique": true
+})

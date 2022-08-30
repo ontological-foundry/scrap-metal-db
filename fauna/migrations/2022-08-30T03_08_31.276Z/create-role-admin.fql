@@ -1,0 +1,12 @@
+CreateRole({
+  "name": "admin",
+  "membership": [{
+    "resource": Collection("admins")
+  }],
+  "privileges": [{
+    "resource": Collection("official-maps"),
+    "actions": {
+      "read": true
+    }
+  }]
+})
