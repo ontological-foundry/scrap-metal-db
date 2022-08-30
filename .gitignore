@@ -10,4 +10,7 @@ fauna/temp
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
-.env
+
+.env*
+!.env.project
+!.env.vault
