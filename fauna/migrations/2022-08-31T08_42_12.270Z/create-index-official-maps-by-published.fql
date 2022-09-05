@@ -1,0 +1,12 @@
+CreateIndex({
+  "name": "official-maps-by-published",
+  "source": Collection("official-maps"),
+  "terms": [{
+    "field": ["data", "published"]
+  }],
+  "values": [{
+    "field": ["ref"]
+  }, {
+    "field": ["data", "name"]
+  }]
+})

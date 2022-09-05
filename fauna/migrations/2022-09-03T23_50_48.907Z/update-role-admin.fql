@@ -1,0 +1,19 @@
+Update(Role("admin"), {
+  "membership": [{
+    "resource": Collection("admins")
+  }],
+  "privileges": [{
+    "resource": Collection("official-maps"),
+    "actions": {
+      "read": true,
+      "create": true,
+      "write": Query(Lambda("oldData", false))
+    }
+  }, {
+    "resource": Index("official-maps-by-published"),
+    "actions": {
+      "read": true
+    }
+  }],
+  "data": null
+})

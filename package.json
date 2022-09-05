@@ -5,12 +5,14 @@
     "migrate": "fauna-schema-migrate run",
     "generate": "fauna-schema-migrate generate",
     "apply": "node scripts/apply.mjs",
-    "rollback": "node scripts/rollback.mjs"
+    "rollback": "node scripts/rollback.mjs",
+    "seed": "node scripts/seed.mjs"
   },
   "devDependencies": {
     "@fauna-labs/fauna-schema-migrate": "^2.2.1",
     "dotenv": "^16.0.1",
     "dotenv-vault": "^1.11.2",
+    "env-var": "^7.2.0",
     "faunadb": "^4.6.0",
     "prettier": "^2.7.1"
   }
